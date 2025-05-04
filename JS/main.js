@@ -113,7 +113,8 @@ async function sendASugestion(wordSugest){
     }
 
     for(let i=0; i<wordSugest.length; i++){ // close-found char.
-        if(arrayRevealCells.map(revealCell => revealCell.index).includes(i)) // skip char found.
+        if(arrayRevealCells.filter(revealCell => revealCell.nameState == "right-found")
+            .map(revealCell => revealCell.index).includes(i)) // skip char found at right-place.
             continue;
         
         let charSugest = wordSugest[i];
@@ -142,7 +143,7 @@ async function sendASugestion(wordSugest){
 
                 currenWordReduced = currenWordReduced.substr(0, j) + "@" + currenWordReduced.substr(j + 1); // replace char find by placeholder.
 
-                continue;
+                break;
             }
 
         }
