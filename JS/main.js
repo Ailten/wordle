@@ -107,11 +107,10 @@ async function sendASugestion(wordSugest){
         }
     }
 
-    for(let i=0; i<arrayRevealCells.length; i++){ // reduce char found.
+    for(let i=0; i<arrayRevealCells.length; i++){ // replace char found by placeholder.
         let indexToRemove = arrayRevealCells[i].index;
         currenWordReduced = currenWordReduced.substr(0, indexToRemove) + "@" + currenWordReduced.substr(indexToRemove + 1);
     }
-    currenWordReduced.replace("@", ""); // using a placeholder for index replacement issue.
 
     for(let i=0; i<wordSugest.length; i++){ // close-found char.
         if(arrayRevealCells.map(revealCell => revealCell.index).includes(i)) // skip char found.
@@ -141,7 +140,7 @@ async function sendASugestion(wordSugest){
                     nameState: "close-found"
                 });
 
-                currenWordReduced = currenWordReduced.substr(0, j) + "@" + currenWordReduced.substr(j + 1); // drop char find.
+                currenWordReduced = currenWordReduced.substr(0, j) + "@" + currenWordReduced.substr(j + 1); // replace char find by placeholder.
 
                 continue;
             }
