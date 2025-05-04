@@ -1,0 +1,60 @@
+
+body{
+    margin: 0;
+}
+
+section#wordle{
+    background-color: rgba(0,0,0, 0.1);
+    margin: 0 auto 0 auto;
+    width: fit-content;
+    letter-spacing: -0.32em;
+    border-radius: 5px;
+    padding: 5px;
+    height: 355px;
+}
+
+div.line{
+    margin-bottom: -1px;
+}
+
+div.cell{
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: rgb(185, 185, 185);
+    display: inline-block;
+    margin: 5px;
+    letter-spacing: 1em;
+    font-size: 42px;
+    text-indent: 12px; /* fake center*/
+}
+
+div#solution div.cell{
+    background-color: rgb(151, 151, 151);
+}
+
+div.right-found{
+    background-color: rgb(150, 209, 127) !important;
+}
+div.close-found{
+    background-color: rgb(212, 149, 112) !important;
+}
+div.not-found{
+    /* background-color: rgb(194, 122, 122) !important; */
+}
+
+div.cell > span{
+    margin-left: 12px;
+}
+
+
+/* for input */
+section#input{
+    margin: auto;
+    width: fit-content;
+    padding: 30px;
+}
+
+input#input-sugestion{
+    width: 100%;
+}
